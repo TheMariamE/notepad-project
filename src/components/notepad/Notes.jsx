@@ -6,7 +6,8 @@ import { v4 as uuid } from "uuid";
 
 const Notes = () => {
   //states
-  const [notes, setNotes] = useState([]);
+  const savedNotes = localStorage.getItem('notes');
+  const [notes, setNotes] = useState(savedNotes ? JSON.parse(savedNotes) : []);
   const [inputText, setInputText] = useState("");
 
   // get text and store in state
@@ -33,18 +34,9 @@ const Notes = () => {
     setNotes(filteredNotes);
   };
 
-  //apply the save and get functions using useEffect
-  //get the saved notes and add them to the array
-  useEffect(() => {
-    const notes = JSON.parse(localStorage.getItem("Notes"));
-    if (notes) {
-      setNotes(notes);
-    }
-  }, []);
-
   //saving data to local storage
   useEffect(() => {
-    localStorage.setItem("Notes", JSON.stringify(notes));
+    localStorage.setItem('notes', JSON.stringify(notes));
   }, [notes]);
 
   return (
