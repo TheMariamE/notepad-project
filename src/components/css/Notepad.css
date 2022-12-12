@@ -30,7 +30,7 @@
     outline: none;
 }
 .note textarea::placeholder {
-    color: #fff;
+    color: rgb(255 255 255 / 50%);
 }
 .note__save {
     background: transparent;
@@ -55,4 +55,14 @@
 }
 .char__progress {
     background-color: #fff!important;
+}
+
+
+.MuiCheckbox-root {
+    color: #fff !important;
+    padding: 0 !important;
+}
+
+.note:has(.Mui-checked) {
+    background: rgb(0 128 0 / 50%);
 }

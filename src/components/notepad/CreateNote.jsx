@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 function CreateNote({ textHandler, saveHandler, inputText }) {
   return (
@@ -11,8 +11,7 @@ function CreateNote({ textHandler, saveHandler, inputText }) {
         onChange={textHandler}
         maxLength="100"
       ></textarea>
-      <div className="note__footer">
-        <span className="label"> </span>
+      <div className="note__footer" style={{ justifyContent: "flex-end" }}>
         <button className="note__save" onClick={saveHandler}>Save</button>
       </div>
     </div>
