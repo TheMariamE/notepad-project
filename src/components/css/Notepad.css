@@ -64,5 +64,10 @@
 }
 
 .note:has(.Mui-checked) {
-    background: rgb(0 128 0 / 50%);
+    background: rgb(0 128 0 / 85%);
+    border-color: rgb(0 128 0 / 85%);
+}
+
+.MuiLinearProgress-root span {
+    background-color: rgb(0 128 0 / 50%);
 }
