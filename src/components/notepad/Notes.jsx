@@ -13,15 +13,15 @@ const Notes = () => {
   const textHandler = (e) => {
     setInputText(e.target.value);
   };
-  
+
   // add new note to the state array
   const saveHandler = () => {
     setNotes((prevState) => [
       ...prevState,
       {
         id: uuid(),
-        text: inputText,
-      },
+        text: inputText
+      }
     ]);
     //clear the textarea
     setInputText("");
@@ -38,6 +38,7 @@ const Notes = () => {
     localStorage.setItem("Notes", JSON.stringify(notes));
   }, [notes]);
 
+  //apply the save and get functions using useEffect
   //get the saved notes and add them to the array
   useEffect(() => {
     const data = JSON.parse(localStorage.getItem("Notes"));
@@ -45,6 +46,7 @@ const Notes = () => {
       setNotes(data);
     }
   }, []);
+
 
   return (
     <div className="notes">

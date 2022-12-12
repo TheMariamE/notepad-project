@@ -2,7 +2,7 @@ import React from 'react';
 import DeleteForeverOutlined from "@mui/icons-material/DeleteForeverOutlined";
 import Checkbox from "@mui/material/Checkbox";
 
-function Note({ id, text, deleteNote }) {
+function Notepad({ id, text, deleteNote }) {
     return (
     <div className="note">
         <div className="note__body">{text}</div>
@@ -18,4 +18,4 @@ function Note({ id, text, deleteNote }) {
     )
 }
 
-export default Note;
+export default Notepad;

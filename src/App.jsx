@@ -7,7 +7,7 @@ import Notes from "./components/notepad/Notes";
 function App() {
   return (
     <div className="main">
-      <div class="wrapper">
+      <div className="wrapper">
         <Header />
         <Notes />
       </div>
