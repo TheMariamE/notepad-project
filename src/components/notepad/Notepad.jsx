@@ -8,8 +8,8 @@ function Notepad({ id, text, checked, handleClick, deleteNote }) {
         <div className="note__body">{text}</div>
         <div className="note__footer" style={{ justifyContent: "inherit" }}>
             <Checkbox 
-            checked={checked}
-            onChange={handleClick}
+            // checked={checked}
+            // onChange={handleClick}
             />
             <DeleteForeverOutlined
             className="note__delete"
