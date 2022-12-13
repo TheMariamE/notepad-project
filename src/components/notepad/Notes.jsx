@@ -8,7 +8,8 @@ const Notes = () => {
   //states
   const savedNotes = localStorage.getItem('notes');
   const [notes, setNotes] = useState(savedNotes ? JSON.parse(savedNotes) : []);
-  const [inputText, setInputText] = useState("");
+  const [inputText, setInputText,] = useState("");
+  const [checked, setChecked] = useState(false);
 
   // get text and store in state
   const textHandler = (e) => {
@@ -21,7 +22,8 @@ const Notes = () => {
       ...prevState,
       {
         id: uuid(),
-        text: inputText
+        text: inputText,
+        finishedTask: checked
       }
     ]);
     //clear the textarea
@@ -33,6 +35,21 @@ const Notes = () => {
     const filteredNotes = notes.filter((note) => note.id !== id);
     setNotes(filteredNotes);
   };
+
+  //Finished Note check function
+
+  // const handleClick = id => e => {
+  //   const { checked } = e.target;
+  //     setChecked((values) => ({
+  //       ...values,
+  //       [id]: checked
+  //     }));
+  // };
+  // const handleClick = (e) => {
+  //   setChecked(e.target.checked);
+  // };
+  const handleClick = () => setChecked(checked);
+  // const handleClick = () => setNotes([...notes, { finishedTask: !checked }]);
 
   //saving data to local storage
   useEffect(() => {
@@ -46,6 +63,8 @@ const Notes = () => {
           key={note.id}
           id={note.id}
           text={note.text}
+          checked={note.checked}
+          handleClick={handleClick}
           deleteNote={deleteNote}
         />
     ))}
