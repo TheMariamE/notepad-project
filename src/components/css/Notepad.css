@@ -31,6 +31,9 @@
 }
 .note textarea::placeholder {
     color: rgb(255 255 255 / 50%);
+    font-family: "Montserrat";
+    font-size: 16px;
+    letter-spacing: 2px;
 }
 .note__save {
     background: transparent;
@@ -38,20 +41,22 @@
     border: 1.5px solid #fff;
     border-radius: 10px;
     color: #fff;
-    padding: 4px 10px;
-    font-size: 13px;
+    padding: 4px 10px 5px;
+    font-size: 14px;
     cursor: pointer;
+    font-family: "Montserrat";
 }
 .note__save:hover {
     background: #fff;
     border: 1.5px solid #fff;
-    color: #4b1589;
+    color: rgb(0 128 0 / 85%);
 }
 .note__delete {
     cursor: pointer;
 }
 .note__delete:hover {
     transform: scale(1.1);
+    color: red;
 }
 .char__progress {
     background-color: #fff!important;
